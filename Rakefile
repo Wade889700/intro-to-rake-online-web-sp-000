@@ -10,10 +10,12 @@ desc 'outputs hello to the terminal'
   end
 end
 
+task :environment do
+  require_relative './config/environment'
+end
 namespace :db do
   desc 'migraet change to your database'
   task :migrate => :environment do
     Student.create_table
   end
-
 end
